@@ -13,6 +13,36 @@
 
 هذا القسم **يُقرأ أولاً ويُقدَّم على أي تفصيل متعارض معه** في الأجزاء 1/2/3 أدناه (خصوصًا جدول قسم 12 في الجزء 1، وجدول قسم 8 في الجزء 2). الأجزاء القديمة تبقى صحيحة كمنهجية عامة (كيفية كتابة الحقول، مصفوفة المخاطر، PPE...) لكن **أي بيانات معدة محددة (وصف، جهد، معدات رفع، وجود كوبلنج) تُؤخذ من `JPPMDES.xlsx` أولاً**، ومن هذا القسم كمرجع سريع ثانيًا — لا من الجداول القديمة في الأجزاء 1/2 إذا تعارضت.
 
+### 0.0 ⚠️ القاعدة الأهم والأحدث — ترتيب مقدمة كل JSA (10 خطوات، معتمدة نهائيًا من مستند "Generation Work Permit Procedure Rev-2" §4.1.1 + SEPC_0029_CO_011 §2.2/2.3)
+
+**أي ذِكر لـ"Obtain PTW/Work Permit" كخطوة أولى، أو لـTBT قبل التصريح، أو لدمج قفل المصدر مع القفل الشخصي، في أي مكان آخر من هذا الملف يُعتبر غير معتمد ويُستبدل بهذا الترتيب دائمًا:**
+
+**المصدر الرسمي:** مستند "Generation Work Permit Procedure Rev-2" (WCM Core Team)، بند 4.1.1، ينص صراحة:
+- 4.1.1.2: معاينة موقع مشتركة (المصدر + المستلم) **قبل** أي تصريح.
+- 4.1.1.5-4.1.1.8: **المصدر وحده** يُنفّذ العزل، يختبر صفر الطاقة، ويضع القفل/التاق — قبل صدور التصريح.
+- 4.1.1.12-4.1.1.13: **المستلم وحده** مسؤول عن التحقق ميدانيًا من أن القفل/التاق مطبّقان فعليًا في الموقع ("verify that all isolations and grounding are actually performed in the field and locked out/tagged out") — خطوة مستقلة، منفصلة عن فعل العزل نفسه.
+- 4.1.1.14-4.1.1.16: التصريح يُستخرج بعد اكتمال العزل، والمستلم يوقّع عليه بعد اقتناعه بالحماية.
+
+**وبحسب توضيح المستخدم المباشر (تطبيقًا عمليًا للمستند):** TBT يبقى **قبل بدء التنفيذ الفعلي** (بعد التصريح، وليس أول خطوة)، والمستلم يسوي TBT ثم يتحقق ميدانيًا من القفل/التاق ثم يضع قفله الشخصي — بهذا الترتيب.
+
+**التسلسل الثابت الإلزامي لمقدمة كل JSA فيه عزل (10 خطوات، بالمحتوى الكامل في قسم 9-هـ من الجزء 1):**
+1. Conduct joint site walk-down with Permit Issuer and Permit Receiver — تحديد مصادر الطاقة + SIMOPS + ظروف الموقع
+2. Verify equipment/tools certification and inspect PPE condition
+3. Process isolation request in system
+4. Isolate energy source — **المصدر وحده**
+5. Verify zero voltage/zero energy — **المصدر وحده** *(وليس مسؤولية مشتركة — تصحيح على قرار سابق)*
+6. Apply isolation lock/tag — **المصدر وحده** *(خطوة مستقلة، غير مدمجة مع القفل الشخصي)*
+7. Obtain Work Permit (PTW) — Permit Issuer + Permit Receiver
+8. Conduct Toolbox Talk and PPE Briefing — Permit Receiver
+9. Verify boundary tag and isolation lock are applied — **المستلم وحده** *(خطوة مستقلة، رجعت بعد ما حذفناها بالخطأ — تحقق ميداني فعلي بعد التصريح وTBT)*
+10. Apply Personal Lock — **المستلم وحده** *(بعد التحقق مباشرة)*
+
+بعد الخطوة 10 تبدأ خطوات التنفيذ الفعلية الخاصة بالمهمة (نقل معدة، فصل/وصل أطراف كابلات...)، ثم خطوات النهاية الثابتة (قسم 9-ز: فحص نهائي → Housekeeping → إزالة القفل الشخصي → إغلاق التصريح في WCM، دائمًا آخر خطوة).
+
+**ملاحظة على تصحيحين سابقين أُلغيا الآن:**
+- خطوة "Verify boundary tag and isolation lock are applied" **رجعت** — كانت أُلغيت بافتراض أن المستلم حاضر لحظة العزل نفسها، لكن المستند الرسمي يؤكد أنها تحقق ميداني منفصل يحدث لاحقًا (بعد التصريح)، وليس مجرد حضور.
+- "Verify zero voltage" **أصبحت مسؤولية المصدر وحده**، وليست مشتركة كما قررنا سابقًا — التصحيح جاء من توضيح المستخدم المباشر.
+
 ### 0.1 مصدر بيانات الخطوات الآن حرفي من عمود Task Scope / Activities
 
 لكل مهمة (Task ID) في شيت **Tasks Register**، عمود **Task Scope / Activities** أصبح يتضمن التسلسل الكامل والمعتمد للخطوات (بما فيه خطوات النقل من/إلى المستودع والورشة الكهربائية، والسقالة عند الحاجة) — هذا العمود هو **المصدر الحرفي الأول** لتسلسل الـ Job Steps لتلك المهمة تحديدًا، ويُقدَّم على القوالب العامة في قسم 12 (الجزء 1) أو قسم 1 (الجزء 2) كلما وُجد صف مطابق. القوالب العامة تبقى مرجعًا فقط عند عدم وجود صف مطابق في Tasks Register.
@@ -94,6 +124,34 @@
 
 تُستخدم هذه الصياغة (أو ما يعادلها) في أي JSA أو مستند يخص 88KA لتوضيح حدود مسؤولية الكهرباء.
 
+### 0.10 ⚠️ قيم C ثابتة معتمدة نهائيًا — فك/إعادة توصيل الكابلات، والرفع بالكرين/الفوركلفت + تمييز Total Damage عن Equipment Damage
+
+**تُغلب هذه القيم على أي قيمة C عامة أو استرشادية وردت سابقًا في الجزء 1 أو أي جزء آخر لنفس الخطوات (مثل السطر "C3/C4 حسب الخطر المتبقي" في جدول قسم 1 بالجزء 1) — هذه القيم الثابتة أدناه هي الحاكمة الآن.**
+
+**أ) فك/إعادة توصيل الكابلات الكهربائية (بعد عزل صحيح + Voltage Test + Personal Lock — بدون تعرض حي مباشر):**
+
+| الخطوة | Consequence الثابتة |
+|---|---|
+| **Disconnect electrical cable terminals** | **C4** |
+| **Reconnect electrical cable terminals** | **C3** |
+
+المنطق: خطوة الفك أقرب فعليًا للتلامس المباشر مع الأطراف المفكوكة (طرف مكشوف حتى لو مؤكد صفر جهد) فتبقى الشدة الأعلى نسبيًا C4؛ خطوة إعادة التوصيل تتم على نظام لا يزال معزولاً وقفله مطبّق، فالخطر المتبقي أقل نسبيًا فتُستخدم C3.
+
+**ب) أعمال الرفع بالكرين (Mobile/Overhead Crane) أو الفوركلفت — خطر سقوط المعدة أثناء الرفع/النقل:**
+
+خطوات رفع أو إنزال أو نقل المعدة بالكرين أو الفوركلفت (Remove/Install motor using Crane/Forklift، Lift/Lower motor، إلخ) تُقيَّم **C3** كقيمة ثابتة لسيناريو سقوط المعدة أثناء الرفع (كسر أو عطل في المعدة نتيجة السقوط) — **ما لم يوجد تعرض بشري حي مباشر إضافي في نفس الخطوة (عندها تُقيَّم حسب ذلك التعرض بشكل منفصل، وليس بدل قيمة الرفع)**. هذا يُخصّص ويُدقّق القاعدة العامة في الجزء 1 ("لا تُستخدم Fatality/C5 لخطوات الرفع، الحد الأقصى C4") بحيث يكون السيناريو الفعلي المعتمد لتلف المعدة بسبب السقوط تحديدًا هو **C3**.
+
+**ج) تمييز Total Damage عن Equipment Damage (صياغة Consequences):**
+
+لا تُستخدم "Equipment damage" كصياغة عامة واحدة لكل أنواع التلف. تُفرَّق النتيجة حسب مدى الضرر المتوقع من السيناريو:
+
+| المصطلح | متى يُستخدم |
+|---|---|
+| **Total Damage** | المعدة تُتلف بالكامل ولا يمكن إصلاحها — يتم التخلص منها كخردة (مثال: سقوط من ارتفاع كبير أثناء الرفع، تصادم شديد) |
+| **Equipment Damage** | ضرر جزئي/قابل للإصلاح — مثل خدش، انبعاج بسيط من سقوط خفيف، أو قصر كهربائي (short) ناتج عن خطأ في التوصيل — المعدة لا تزال قابلة للإصلاح أو إعادة التأهيل |
+
+يُختار المصطلح المناسب حسب واقعية السيناريو لكل خطوة تحديدًا، وليس تلقائيًا "Equipment damage" لكل شيء. مثال: خطوة الرفع بالفوركلفت/الكرين (البند ب أعلاه، C3) عادة تُستخدم معها **Equipment Damage** إن كان السقوط من ارتفاع منخفض ضمن نطاق محكوم (قابل للإصلاح)، وتُستخدم **Total Damage** فقط إذا كان السيناريو الواقعي المحدد يشير لضرر كارثي غير قابل للإصلاح.
+
 ---
 ---
 
@@ -122,7 +180,7 @@
 |---|---|
 | Disconnect cable terminals **without** verified isolation | Fatality / C5 ممكن |
 | Connect cable terminals مع احتمال backfeed أو uncontrolled energization | Fatality / C5 ممكن |
-| Disconnect cable terminals **after** isolation + voltage test + personal lock | لا Fatality تلقائيًا — استخدم C3/C4 حسب الخطر المتبقي |
+| Disconnect cable terminals **after** isolation + voltage test + personal lock | لا Fatality تلقائيًا — **C4 ثابتة** (انظر §0.10-أ)؛ Reconnect بعدها **C3 ثابتة** |
 | Mechanical removal of motor بعد العزل | لا Fatality بسبب الكهرباء — قيّم pinch/crush/equipment damage فقط |
 | أي مهمة رفع في JEPP (Trial Lift، النقل بين معدات الرفع، الفحص، خطة الرفع) | **لا Fatality أبدًا** — الموقع يطبق Exclusion Zone صارم ويمنع دخول أي فرد تحت الحمل المعلّق نهائيًا؛ استخدم Serious/Crush injury + Equipment damage (C3/C4 كحد أقصى) |
 
@@ -414,39 +472,24 @@
 
 **قبل كتابة أي JSA، يُسأل دائمًا:** ما نوع الطاقة أو الخطر الأساسي في هذا العمل؟ ثم يُختار نوع العزل المناسب — **ولا يُفترض أنه كهربائي إلا إذا كان العمل فعلاً على مصدر كهربائي**.
 
-#### ب) التسلسل القياسي للخطوات (Job Steps) — عام لأي JSA (استبدال كامل للمعدة، يتضمن رفع/فك عن القاعدة)
+#### ب) التسلسل القياسي للخطوات (Job Steps) — عام لأي JSA (استبدال كامل للمعدة، يتضمن رفع/فك عن القاعدة) — **محدّث نهائيًا (10 خطوات)، مطابق لمستند Generation Work Permit Procedure Rev-2**
 
-> ⚠️ **تحديث نهائي 2026-09-25 (يُلغي الترتيب القديم أدناه سابقًا):** تصريح العمل (Work Permit) **ليس** أول خطوة عند وجود عزل — تمت مطابقته مع "Generation Work Permit Procedure Rev-2" §4.1.1 وSEPC_0029_CO_011 §2.2/2.3 وتأكيده من المستخدم. أي JSA فيها عزل تبدأ بالتسلسل الثابت التالي (10 خطوات)، وليس بخطوة Work Permit:
+**القاعدة الأهم:** معاينة موقع مشتركة أولًا (قبل التصريح)، بعدها المصدر وحده ينفّذ العزل واختبار صفر الطاقة ووضع القفل/التاق، بعدها يصدر التصريح، بعدها TBT، بعدها المستلم وحده يتحقق ميدانيًا من القفل/التاق ثم يضع قفله الشخصي، ثم يبدأ التنفيذ الفعلي. راجع قسم 0.0 أعلى الملف للتفصيل والمصدر الرسمي.
 
-```
-1. Joint Site Walk-down مع Permit Issuer وPermit Receiver (مصادر الطاقة، SIMOPS، حالة الموقع)
-2. التحقق من شهادات المعدات/الأدوات وفحص حالة PPE
-3. طلب العزل (Process isolation request في النظام)
-4. عزل مصدر الطاقة — Responsible: Permit Issuer
-5. Verify Zero Voltage / Zero Energy — Responsible: Permit Issuer فقط
-6. Apply Isolation Lock/Tag — Responsible: Permit Issuer فقط
-7. Obtain Work Permit (PTW) — Responsible: Permit Issuer + Permit Receiver
-8. Toolbox Talk + PPE Briefing — Responsible: Permit Receiver
-9. Verify Boundary Tag and Isolation Lock — Responsible: Permit Receiver
-10. Apply Personal Lock — Responsible: Permit Receiver
-```
+1. **Conduct joint site walk-down with Permit Issuer and Permit Receiver** — معاينة مشتركة في الموقع (قبل أي تصريح): تحديد مصادر الطاقة، SIMOPS، ظروف الموقع وأي أعمال متداخلة.
+2. **Verify equipment/tools certification and inspect PPE condition** — التحقق من شهادات المعدات/الأدوات وفحصها، وفحص حالة PPE.
+3. **Process isolation request in system** — عودة المصدر والمستلم للمكتب لمعالجة/توثيق طلب العزل في النظام.
+4. **Isolate energy source** — **المصدر وحده** ينفّذ العزل الفعلي حسب نوع الطاقة.
+5. **Verify zero voltage / zero energy** — **المصدر وحده** يختبر صفر الطاقة (ليست مسؤولية المستلم في هذه الخطوة).
+6. **Apply isolation lock/tag** — **المصدر وحده** يضع قفل/تاق العزل — خطوة مستقلة، غير مدمجة مع القفل الشخصي.
+7. **Obtain Work Permit (PTW)** — يُستخرج تصريح العمل بعد اكتمال العزل فعليًا.
+8. **Conduct Toolbox Talk and PPE Briefing** — المستلم يجري TBT مع فريق العمل، بعد التصريح.
+9. **Verify boundary tag and isolation lock are applied** — **المستلم وحده**، تحقق ميداني فعلي (وليس مجرد حضور) من أن القفل/التاق مطبّقان في الموقع — خطوة مستقلة بعد TBT.
+10. **Apply Personal Lock** — **المستلم وحده**، بعد التحقق مباشرة، قبل لمس المعدة.
+11. **بقية خطوات تنفيذ العمل الفعلية** — بترتيب منطقي حسب طبيعة الوظيفة. إذا كان العمل يتطلب اختبار وظيفي (مثل اختبار اتجاه دوران محرك) **قبل** إكمال التوصيل/المحاذاة النهائية مع معدة أخرى (مثل مضخة)، يُكتب اختبار الدوران كخطوة مستقلة قبل خطوة الإكمال — انظر البند (ز) أدناه.
+12. **خطوات النهاية — قاعدة WCM الثابتة والصارمة (انظر البند ز):** الفحص النهائي → Housekeeping → إزالة القفل الشخصي (إن وُجد) → إغلاق تصريح العمل في **WCM Issuer Office**، وهذه دائمًا **آخر خطوة في أي JSA بدون استثناء**.
 
-خطوات 4-6 هي عمل Issuer وحده، قبل صدور التصريح. خطوات 9-10 هي تحقق Receiver الميداني الخاص به، بعد التصريح وToolbox Talk، مباشرة قبل ملامسة المعدة — لا تُدمج 4-6 مع بعضها، ولا 9-10 مع بعضها، ولا يُدمج قفل Issuer (خطوة 6) مع القفل الشخصي لـReceiver (خطوة 10).
-
-بعد التسلسل الثابت أعلاه، تكمل بقية الخطوات:
-
-11. **Apply the correct isolation type based on the job** — نوع العزل المختار في الخطوات 3-6 أعلاه يُحدَّد حسب طبيعة العمل الفعلية:
-   - **Electrical isolation** — إذا كان العمل كهربائيًا أو فيه مصدر كهرباء.
-   - **Mechanical isolation** — إذا فيه أجزاء دوارة/متحركة (rotating/moving parts).
-   - **Process isolation** — إذا فيه خط/نظام تحت ضغط (line/system).
-   - **Fuel isolation** — إذا فيه وقود ديزل/خام/غاز (diesel/crude/gas).
-   - **Hydraulic/Pneumatic isolation** — إذا فيه ضغط زيت أو هواء.
-   - **Thermal isolation** — إذا فيه سطح ساخن، بخار، زيت ساخن (hot surface/steam/hot oil).
-   - **Firefighting isolation** — فقط إذا كان العمل قد يسبب تفعيل غير مقصود لنظام الإطفاء (مثال: Hot Work قرب كواشف الحريق)، مع تعويض ذلك بإجراءات سلامة بديلة (Fire Watch مثلاً).
-12. **بقية خطوات تنفيذ العمل الفعلية** — بترتيب منطقي حسب طبيعة الوظيفة. إذا كان العمل يتطلب اختبار وظيفي (مثل اختبار اتجاه دوران محرك) **قبل** إكمال التوصيل/المحاذاة النهائية مع معدة أخرى (مثل مضخة)، يُكتب اختبار الدوران كخطوة مستقلة قبل خطوة الإكمال — انظر البند (ز) أدناه.
-13. **خطوات النهاية — قاعدة WCM الثابتة والصارمة (انظر البند ز):** الفحص النهائي → Housekeeping → إزالة القفل الشخصي (إن وُجد) → إغلاق تصريح العمل في **WCM Issuer Office**، وهذه دائمًا **آخر خطوة في أي JSA بدون استثناء**.
-
-**لا يبدأ أي JSA فيها عزل بخطوة Work Permit، ولا تُكتب Toolbox Talk قبل صدور التصريح — انحراف يُعاد الملف بسببه لحالة "تحت المراجعة".**
+**لا تُدمج الخطوات 4-6 في خطوة واحدة، ولا الخطوتان 9-10، ولا يُدمج قفل/تاق المصدر (خطوة 6) مع القفل الشخصي للمستلم (خطوة 10)** — أربع/خمس خطوات منفصلة تمامًا، كل واحدة لشخص مختلف في وقت مختلف من التسلسل.
 
 #### ج) قواعد مهمة يجب الالتزام بها
 
@@ -458,6 +501,8 @@
 - **Fatality/C5 تُستخدم فقط عند سيناريو تعرض قاتل كهربائي واقعي وقابل للتصديق** (تلامس حي، Uncontrolled energization، Arc flash قوي) — وليست نتيجة افتراضية لكل خطوة كهربائية (انظر القاعدة المفصّلة أعلى الملف).
 - **خطوات الرفع (Lifting) في JEPP لا تُستخدم لها Fatality/C5 إطلاقًا** — بسبب الضوابط الصارمة (Exclusion Zone + منع الرفع فوق الأفراد)؛ الحد الأقصى C4 (Serious/Crush injury).
 - **خانة Responsible تلتزم دائمًا بالقائمة المحصورة (قسم 2):** Permit Issuer و/أو Permit Receiver لكل التاسكات، ويُضاف Crane Operator / Rigger / Signal Man / Forklift Driver فقط في تاسكات الرفع وحسب ما يلزم كل خطوة تحديدًا — بدون Job Supervisor أو أي فني/مشرف خارجي. **Rigger وSignal Man تحديدًا دورهما مرتبط بـMobile Crane فقط** — لا يُضافان لا لخطوات Forklift ولا لخطوات Overhead Crane (الرافعة الثابتة 5 Ton المستخدمة لمجموعتي CRUDE/DIESEL FWD تُعامل نفس معاملة Forklift من ناحية الأدوار). خطوة نقل بـForklift فقط تكون Responsible: Permit Receiver + Forklift Driver حصرًا. خطوة برافعة Overhead Crane تكون Responsible: Permit Receiver + Crane Operator حصرًا (بدون Rigger/Signal Man). Rigger وSignal Man يُضافان فقط عند خطوة تستخدم Mobile Crane تحديدًا، حتى لو كانت نفس المهمة تتضمن رافعة أخرى أو Forklift بخطوة ثانية.
+
+**القاعدة تشمل الصف كامل، مو خانة Responsible فقط:** بخطوة Forklift فقط أو Overhead Crane فقط، ممنوع ظهور كلمة "Rigger" أو "Signal Man" بأي خانة من خانات نفس الصف — لا بـDetail (مثال ممنوع: كتابة "• Signal Man" أو "• Signal Man Control" أو "• Rigger Verification" كنقطة إجراء تحكم)، ولا بـPotential Hazard، ولا بـCause، ولا بـConsequences. لو احتجت تذكر إجراء تحكم متعلق بتوجيه الفوركلفت أو الرافعة الثابتة، اكتب اسم الإجراء نفسه (مثال: "Forklift Route Check"، "Exclusion Zone") بدل اسم دور غير مسموح بتلك الخطوة.
 - **الملف الأساسي (القالب) يُنسخ حرفيًا من "JSA Form.xlsx" في مجلد المشروع، وبيانات الخطوات تُؤخذ من الملف الذي يحدده المستخدم لكل مهمة** (انظر قسم 7-أ و7-ب) — لا يُعاد بناء القالب من الصفر ولا تُخترع بيانات الخطوات.
 - **Residual C يجب أن ينخفض فعليًا بعد وصف ضوابط كاملة في Detail** — لا يُترك Residual C مطابقًا لـ Inherent C لمجرد أن الخطوة "كهربائية" أو "حرجة"؛ التخفيض يُقاس بواقعية التعرض المتبقي بعد الضوابط (انظر قسم 9-ط لمثال حي من ملف مرجعي رُصد فيه هذا الخطأ).
 
@@ -489,11 +534,26 @@ Identify energy source and apply electrical isolation:
 
 خطوة تحتوي على **إجراء ذري واحد فقط** (بدون عناصر متعددة) تبقى سطرًا واحدًا بدون نقاط، مثال: `Perform motor rotation test.`
 
-#### هـ) مثال كامل — تاسك 1 (ثابت لكل JSA)
+#### هـ) مثال كامل — الخطوات الثابتة 1-10 (المقدمة القياسية لكل JSA فيه عزل، معتمدة نهائيًا)
 
-| Job Step | Potential Hazard | Causes | Consequences | Type | Detail | Responsible |
-|---|---|---|---|---|---|---|
-| Obtain Work Permit and confirm SIMOPS | • Unauthorized Work<br>• Unclear Scope<br>• SIMOPS | • Human error<br>• Incomplete review<br>• SIMOPS not identified | • Injury<br>• Equipment damage<br>• Work interruption | AP | • PTW Verification<br>• SIMOPS Check<br>• Scope Confirmation | • Permit Issuer<br>• Permit Receiver |
+| # | Job Step | Potential Hazard | Causes | Consequences | Type | Detail | Responsible |
+|---|---|---|---|---|---|---|---|
+| 1 | Conduct joint site walk-down with Permit Issuer and Permit Receiver | • Unidentified Energy Source<br>• SIMOPS Conflict<br>• Uncontrolled Site Hazards | • Incomplete walk-down<br>• Drawing not reviewed<br>• Concurrent work not identified | • Injury<br>• Equipment damage | AP | • Joint Site Walk-down<br>• Energy Source Identification<br>• SIMOPS Check<br>• Site Condition Survey | • Permit Issuer<br>• Permit Receiver |
+| 2 | Verify equipment/tools certification and inspect PPE condition | • Defective Equipment<br>• Expired Certification<br>• Unsafe PPE | • Equipment not inspected<br>• Certificate not checked<br>• Worn/damaged PPE used | • Injury<br>• Equipment damage | AP | • Certificate Verification<br>• Equipment Inspection<br>• Tool Inspection<br>• PPE Inspection | • Permit Issuer<br>• Permit Receiver |
+| 3 | Process isolation request in system | • Incomplete Isolation Record<br>• Unauthorized Isolation | • System entry error<br>• Isolation not documented | • Unauthorized re-energization<br>• Audit non-compliance | AP | • Isolation Request Entry<br>• System Verification | • Permit Issuer<br>• Permit Receiver |
+| 4 | Isolate energy source *(مثال كهربائي — يتغير حسب نوع العزل، انظر قسم 9-أ)* | • Electric Shock<br>• Arc Flash | • Wrong breaker identified<br>• Incomplete isolation list | • Fatality<br>• Arc-flash burn<br>• Equipment damage | AP/HP | • Breaker Identification Check<br>• Isolation Execution<br>• Arc-Rated Glove (500V, Class 00)<br>• CAT-2 Arc-Rated Clothing | • Permit Issuer |
+| 5 | Verify zero voltage | • Live Contact<br>• Arc Flash | • Isolation failure<br>• Backfeed<br>• Defective tester | • Fatality<br>• Arc-flash burn<br>• Equipment damage | AP/HP | • Live-Dead-Live Test<br>• Voltage Test<br>• Arc-Rated Glove (500V, Class 00)<br>• CAT-2 Arc-Rated Clothing | • Permit Issuer |
+| 6 | Apply isolation lock/tag | • Unauthorized Re-energization | • Lock/tag omitted<br>• Key uncontrolled | • Serious injury<br>• Equipment damage | HM | • Isolation Lock/Tag<br>• Key Control | • Permit Issuer |
+| 7 | Obtain Work Permit (PTW) | • Unauthorized Work<br>• Unclear Scope | • Permit not approved<br>• Scope not reviewed | • Injury<br>• Work interruption | AP | • PTW Verification<br>• Scope Confirmation | • Permit Issuer<br>• Permit Receiver |
+| 8 | Conduct Toolbox Talk and PPE Briefing | • Unclear Responsibilities<br>• Inadequate PPE | • Hazards not communicated<br>• PPE not specified | • Injury<br>• Equipment damage | AP | • Toolbox Talk<br>• PPE Briefing | • Permit Receiver |
+| 9 | Verify boundary tag and isolation lock are applied | • Wrong Isolation Point<br>• Unexpected Energization | • Isolation not verified<br>• Tag/lock missing in field | • Serious injury<br>• Equipment damage | AP | • Lock/Tag Verification | • Permit Receiver |
+| 10 | Apply Personal Lock | • Unauthorized Re-energization | • Personal lock omitted<br>• Key uncontrolled | • Serious injury<br>• Equipment damage | HM | • Personal Lock<br>• Key Control | • Permit Receiver |
+
+**ملاحظات على الجدول:**
+- الخطوة 4 (Isolate energy source) مثال كهربائي — لبقية أنواع العزل (ميكانيكي، عملياتي، وقود، هيدروليكي/هوائي، حراري) يُستبدل المحتوى حسب قسم 9-أ ونفس أمثلة القسم (و) أدناه، مع بقاء ترتيبها في الموضع 4.
+- الخطوتان 6 و10 لا تُضافان إذا كان نوع العزل لا يتطلب قفل/تاق أصلاً (انظر قسم 9-ج).
+- خطوة 9 لا تُحذف أبدًا حتى لو كان المستلم حاضرًا وقت المعاينة (خطوة 1) — هي تحقق ميداني منفصل يحدث لاحقًا، بعد التصريح وTBT.
+- بعد الخطوة 10، تبدأ خطوات التنفيذ الفعلية الخاصة بالمهمة (نقل معدة، فصل/وصل أطراف، إلخ) ثم خطوات النهاية الثابتة (قسم 9-ز).
 
 #### و) مثال — تاسك تحديد وتطبيق العزل (يتغير نوعه حسب العمل — ليس ثابتًا كهربائيًا)
 
@@ -515,11 +575,14 @@ Identify energy source and apply electrical isolation:
 |---|---|---|---|---|---|---|
 | Identify energy sources and apply fuel line isolation | • Fire<br>• Explosion | • Residual pressure<br>• Valve not fully closed<br>• Fuel leakage | • Fire<br>• Fatality<br>• Environmental spill | AP/HM | • Depressurization Check<br>• Leak Test<br>• Gas Test | • Permit Issuer<br>• Permit Receiver |
 
-مثال لتاسك رفع (Lifting) — يُضاف من أدوار الرفع فقط ما يلزم الخطوة؛ **بدون Fatality** لأن الموقع يمنع الرفع فوق الأفراد تمامًا (Exclusion Zone صارم):
+مثال لتاسك رفع (Lifting) — يُضاف من أدوار الرفع فقط ما يلزم الخطوة؛ **بدون Fatality** لأن الموقع يمنع الرفع فوق الأفراد تمامًا (Exclusion Zone صارم). **مهم:** خطوة الرفع بـMobile Crane وخطوة النقل بـForklift خطوتان منفصلتان دائمًا (لا تُدمَجان بخطوة واحدة) — لأن أدوارهما مختلفة والدمج يسبب دمج Rigger/Signal Man بخطوة Forklift بالخطأ:
 
 | Job Step | Potential Hazard | Causes | Consequences | Type | Detail | Responsible |
 |---|---|---|---|---|---|---|
-| Perform trial lift and transfer load to forklift | • Dropped/Swinging Load<br>• Forklift Collision | • Poor balance<br>• Loss of line of sight<br>• Load unsecured | • Serious crush injury<br>• Equipment damage | EP/HP/AP | • Exclusion Zone<br>• Trial Lift<br>• Controlled Lowering | • Permit Receiver<br>• Crane Operator<br>• Rigger<br>• Forklift Driver<br>• Signal Man |
+| Perform trial lift with Mobile Crane | • Dropped/Swinging Load | • Poor balance<br>• Loss of line of sight<br>• Load unsecured | • Serious crush injury<br>• Equipment damage | EP/HP/AP | • Exclusion Zone<br>• Trial Lift<br>• Controlled Lowering | • Permit Receiver<br>• Crane Operator<br>• Rigger<br>• Signal Man |
+| Transfer load onto Forklift | • Forklift Collision<br>• Pinch/Crush Points | • Poor placement control<br>• Loose load | • Hand injury<br>• Equipment damage | HM/HP | • Hands Clear Check<br>• Load Securing | • Permit Receiver<br>• Forklift Driver |
+
+**ملاحظة صريحة:** Rigger وSignal Man يظهران فقط بخطوة Mobile Crane (السطر الأول). خطوة Forklift (السطر الثاني) لا تحتوي Rigger ولا Signal Man إطلاقًا — لا بـResponsible ولا بأي بولت بـDetail أو Hazard أو Cause أو Consequences.
 
 #### ز) قاعدة WCM لنهاية أي JSA — Close PTW يجب أن تكون آخر خطوة دائمًا (معتمدة نهائيًا)
 
@@ -544,8 +607,8 @@ Identify energy source and apply electrical isolation:
    - Responsible: • Permit Receiver • Permit Issuer
 2. **إكمال التوصيل/المحاذاة الميكانيكية النهائية بعد تأكيد صحة الدوران (خطوة مستقلة):**
    `Complete coupling/alignment and final torque after confirmed correct rotation.`
-2ب. **إعادة توصيل والتحقق من الخدمات الكهربائية حسب التصريح والإجراءات (خطوة مستقلة منفصلة عن خطوة 2 — لا تُدمَج معها):**
-   `Reconnect and verify electrical services as per work permit and isolation procedures.`
+2ب. **إعادة توصيل أطراف الكابل الكهربائي (خطوة مستقلة منفصلة عن خطوة 2 — لا تُدمَج معها):**
+   `Reconnect electrical cable terminals.`
    - الغرض: فصل الإكمال الميكانيكي (Torque/Alignment) عن إعادة التوصيل الكهربائي كخطوتين منفصلتين لأن كل منهما له مخاطر وأدوات تحقق مختلفة (Pinch/Crush للأولى، Electrical Connection Error/Reverse rotation للثانية).
 3. **الفحص النهائي وHousekeeping (بعد انتهاء كل الأعمال والاختبارات):**
    `Conduct final inspection and housekeeping.`
@@ -569,23 +632,37 @@ Identify energy source and apply electrical isolation:
 
 **المصدر:** مُستخلص من ملف JSA مرجعي خارجي (WC Motor Bearing Replacement) — **الإطار العام معتمد**، لكن Responsible وDetail وC/L Residual يُصحَّحون دائمًا وفق قواعد هذا الملف (انظر ملحق قسم 6 لأنماط الانحراف المرصودة في نفس الملف المرجعي).
 
-**تسلسل الـ10 خطوات:**
+**تسلسل الخطوات (محدّث ليطابق التسلسل الثابت من 10 خطوات في قسم 9-ب/0.0):**
 
-1. **Obtain approved PTW; confirm equipment tag and scope (e.g., bearing replacement); conduct JSA/toolbox talk** — تأكيد تاق المعدة ونطاق العمل الدقيق في الـPTW، ومعاينة موقع مشتركة (Permit Issuer + Permit Receiver)، وتوثيق Toolbox Talk.
-2. **Prepare and barricade the work area; inspect tools, puller and induction heater** — تسييج المنطقة، إضاءة وسطح عمل مناسب، فحص كل الأدوات (Puller، خراطيم هيدروليك، جهاز تسخين بالحث) قبل الاستخدام.
-3. **Shut down the equipment; isolate all electrical and mechanical energy and apply LOTO** — عزل كامل (كهربائي وميكانيكي)، قفل شخصي، تأمين المعدة المدارة (إن وجدت) ضد الحركة.
-4. **Verify zero voltage; identify and disconnect cables only where required** — فحص صفر جهد بجهاز معتمد، فصل كابلات فقط عند الحاجة الفعلية للوصول.
-5. **Remove guards, fan, coupling elements and end covers as applicable; support shaft/rotor** — فك ميكانيكي منظم مع دعم العمود/الروتور ومنع السقوط.
-6. **Remove the component (e.g., bearings) using an approved mechanical or hydraulic puller** — إزالة المكوّن بأداة معتمدة، مع منطقة استبعاد خط النار.
-7. **Inspect components and replacement parts; clean and prepare for installation** — فحص الأجزاء والمكوّن الجديد، تنظيف، تجهيز للتركيب.
-8. **Install the replacement component (e.g., using an approved induction heater)** — تركيب حسب تعليمات الصانع فقط.
-9. **Reassemble components and complete pre-energization checks** — إعادة تجميع، تركيب الحواجز، فحوصات ما قبل التغذية (عزل، استمرارية، تسلسل فاز).
-10. **Close PTW, de-isolate, perform controlled test run and return the equipment to service** — دائمًا آخر خطوة، حسب قاعدة WCM في البند (ز) أعلاه.
+1. **Conduct joint site walk-down with Permit Issuer and Permit Receiver; confirm equipment tag and scope (e.g., bearing replacement)** — معاينة موقع مشتركة وتأكيد تاق المعدة ونطاق العمل قبل أي تصريح.
+2. **Verify equipment/tools certification and inspect PPE condition (puller, induction heater, etc.)** — فحص كل الأدوات (Puller، خراطيم هيدروليك، جهاز تسخين بالحث) وحالة PPE قبل الاستخدام.
+3. **Process isolation request in system** — معالجة/توثيق طلب العزل في النظام (المكتب) قبل التنفيذ الفعلي بالموقع.
+4. **Isolate all electrical and mechanical energy sources** — **المصدر وحده** ينفّذ العزل الفعلي (كهربائي وميكانيكي).
+5. **Verify zero voltage / zero energy** — **المصدر وحده**.
+6. **Apply isolation lock/tag** — **المصدر وحده** — خطوة مستقلة.
+7. **Obtain Work Permit (PTW)** — يُستخرج التصريح بعد اكتمال العزل فعليًا.
+8. **Conduct Toolbox Talk** — المستلم مع فريق العمل، بعد التصريح.
+9. **Verify boundary tag and isolation lock are applied** — **المستلم وحده**، تحقق ميداني بعد TBT.
+10. **Apply Personal Lock** — **المستلم وحده**، بعد التحقق مباشرة.
+11. **Prepare and barricade the work area** — تسييج المنطقة، إضاءة وسطح عمل مناسب.
+12. **Identify and disconnect cables only where required** — فصل كابلات فقط عند الحاجة الفعلية للوصول.
+13. **Remove guards, fan, coupling elements and end covers as applicable; support shaft/rotor** — فك ميكانيكي منظم مع دعم العمود/الروتور ومنع السقوط.
+14. **Remove the component (e.g., bearings) using an approved mechanical or hydraulic puller** — إزالة المكوّن بأداة معتمدة، مع منطقة استبعاد خط النار.
+15. **Inspect components and replacement parts; clean and prepare for installation** — فحص الأجزاء والمكوّن الجديد، تنظيف، تجهيز للتركيب.
+16. **Install the replacement component (e.g., using an approved induction heater)** — تركيب حسب تعليمات الصانع فقط.
+17. **Reassemble components and complete pre-energization checks** — إعادة تجميع، تركيب الحواجز، فحوصات ما قبل التغذية (عزل، استمرارية، تسلسل فاز).
+18. **Reconnect cables (if disconnected in step 12)**
+19. **Perform controlled test run**
+20. **Conduct final inspection and housekeeping**
+21. **Remove Personal Lock**
+22. **Return and close Work Permit at WCM Issuer Office** — دائمًا آخر خطوة، حسب قاعدة WCM في البند (ز) أعلاه.
+
+**ملاحظة:** الخطوات 1-10 ثابتة ومطابقة تمامًا لقسم 9-ب/9-هـ (نفس محتوى Hazard/Cause/Detail/Responsible الموجود هناك) — لا تُعاد صياغتها هنا بشكل مختلف.
 
 **تطبيق القواعد على هذا الإطار (نفس قواعد الإطار الكامل، بدون استثناء):**
 - **Responsible:** Permit Issuer / Permit Receiver فقط لكل الخطوات (لا يوجد رفع هنا، فلا تُضاف أدوار الرفع أبدًا في هذا الإطار).
 - **Detail:** نقاط قصيرة بأسماء إجراءات فقط — أمثلة: `PTW Verification`، `Toolbox Talk`، `Joint Site Inspection`، `Isolation Verification`، `Voltage Test`، `Personal Lock`، `Puller Inspection`، `Line-of-Fire Exclusion`، `Induction Heater Verification`، `Torque Verification`، `Insulation Resistance Test`، `Bump Test`، `Handover Recording` — **وليس فقرات وصفية**.
-- **C/L:** خطوة 3 (Isolation/LOTO) وخطوة 4 (Verify Zero Voltage) تتبعان قسم 1 و9-ج بالضبط — Residual ينخفض فعليًا بعد اكتمال الضوابط (C3/C4، ليس C5 ثابتة). خطوة 6 (إزالة المكوّن بالـPuller) خطر ميكانيكي (طاقة مخزنة/hydraulic injection) — يُقيَّم بواقعية بعد الضوابط (جهاز مثبت، شاشة حماية، تشغيل عن بعد) وينخفض لـC3/C4 Residual وليس يبقى عاليًا افتراضيًا. خطوة 10 (Close PTW/Test Run) قد تبرر C5 Inherent (طاقة حية + أجزاء دوارة) لكن Residual ينخفض بعد Exclusion Zone + Bump Test + Monitored Run.
+- **C/L:** خطوة 4 (Isolate) وخطوة 5 (Verify Zero Voltage) تتبعان قسم 1 و9-ج بالضبط — Residual ينخفض فعليًا بعد اكتمال الضوابط (C3/C4، ليس C5 ثابتة). خطوة 14 (إزالة المكوّن بالـPuller) خطر ميكانيكي (طاقة مخزنة/hydraulic injection) — يُقيَّم بواقعية بعد الضوابط (جهاز مثبت، شاشة حماية، تشغيل عن بعد) وينخفض لـC3/C4 Residual وليس يبقى عاليًا افتراضيًا. خطوة 22 (Close PTW/Test Run) قد تبرر C5 Inherent (طاقة حية + أجزاء دوارة) لكن Residual ينخفض بعد Exclusion Zone + Bump Test + Monitored Run.
 - **ALARP:** YES فقط لصفوف Residual = MEDIUM فأعلى، NO لصفوف LOW — لا تُترك فارغة أبدًا (نفس قاعدة قسم 2).
 - **Consequences:** "Equipment damage" البسيطة، بدون "Major"/"Total" إلا بمبرر فني.
 
@@ -846,9 +923,9 @@ Identify energy source and apply electrical isolation:
 
 ### Responsible (المسؤولية)
 - **حصرًا من**: Permit Issuer / Permit Receiver.
-- **في خطوات الرفع فقط**، يُضاف حسب الحاجة الفعلية لكل خطوة: Crane Operator / Rigger / Signal Man / Forklift Driver.
+- **في خطوات الرفع فقط**، يُضاف حسب الحاجة الفعلية لكل خطوة: Crane Operator / Rigger / Signal Man / Forklift Driver. **Rigger وSignal Man تحديدًا فقط بخطوة Mobile Crane** — أبدًا بخطوة Forklift ولا خطوة Overhead Crane (خطوة Overhead Crane = Crane Operator فقط، خطوة Forklift = Forklift Driver فقط)، ولا بأي خانة أخرى بنفس الصف (Detail/Hazard/Cause/Consequences).
 - **لا يوجد Job Supervisor أو أي فني/مشرف خارجي أبدًا** (Electrical Technician، Mechanical Technician، Operations، إلخ) — هذه القائمة محصورة نهائيًا.
-- تُحدَّد المسؤولية حسب **من ينفّذ فعليًا** ذلك الإجراء في تلك الخطوة تحديدًا: خطوة عزل/قفل شخصي → Permit Issuer + Permit Receiver؛ خطوة رفع فعلي → Permit Receiver + دور الرفع المطلوب (Rigger أثناء الربط، Signal Man أثناء التوجيه، Crane/Forklift Operator أثناء التشغيل).
+- تُحدَّد المسؤولية حسب **من ينفّذ فعليًا** ذلك الإجراء في تلك الخطوة تحديدًا: خطوة عزل/قفل شخصي → Permit Issuer + Permit Receiver؛ خطوة رفع بـMobile Crane → Permit Receiver + Crane Operator + Rigger (أثناء الربط) + Signal Man (أثناء التوجيه)؛ خطوة رفع بـOverhead Crane → Permit Receiver + Crane Operator فقط؛ خطوة نقل بـForklift → Permit Receiver + Forklift Driver فقط.
 
 ### ALARP (YES / NO)
 - **تُكتب دائمًا صراحة YES أو NO — لا تُترك فارغة أبدًا لأي صف مستخدم.**
@@ -947,3 +1024,17 @@ CAT-2 clothing, hard hat, safety glasses, safety shoes.
 - **Electrical:** PPE alone is not enough — isolation, LOTO, confirmed de-energization first; then insulating gloves, arc-rated face shield, arc flash clothing per voltage and hazard.
 - **Lifting/handling:** hard hat, safety shoes, suitable gloves, glasses; never stand under a lifted load; define drop zone and restrict entry.
 - **Chemical:** follow SDS for gloves, goggles, face shield, chemical-resistant clothing, respiratory protection if needed.
+
+---
+
+## ملحق — مراجعة اتساق 2026-09-25 (SKILL.md / General_Instructions.md / JPPMDES.xlsx)
+
+هذا الملف هو النسخة المعتمدة (كان مسبقًا `General_Instructions_New2.md`، وهو الأحدث والأكثر اكتمالًا من بين ثلاث نسخ محلية — النسخة القديمة `General_Instructions.md` والنسخة الوسيطة `General_Instructions_NEW.md` أُرشفتا ولم تعودا مستخدمتين). القاعدة العشرية لترتيب خطوات العزل (§9-ب أعلاه) كانت بالفعل نهائية في هذا الملف قبل هذه المراجعة.
+
+**ما تم فحصه وتصحيحه في هذه الجولة (في `JPPMDES.xlsx`، لا في هذا الملف):**
+- **توحيد الجهود:** `Task Name` في 24 صفًا (8 مجموعات: 88FC, 88QV, 88TK, 88WC, 88PF, 88AB, 88QA, 88TM) كان يقول "480 VAC" بينما `Voltage`/`Job Description`/`Area, Equipment ID` لنفس الصف تقول "460 VAC" بالفعل (هذا الملف يوثّق التصحيح المكافئ لـ88QE في §0 أعلاه لكنه لم يذكر بقية المجموعات — الفجوة الفعلية كانت في حقل Task Name فقط). صُحح Task Name ليطابق. السبب: 480V هو تصنيف بس/قاطع MCC1-AC/MCC2-AC، و460V هو nameplate المحرك الفعلي لهذه المجموعات الثمانية — كلاهما صحيح في سياقه، والحقول الثلاثة الأخرى كانت مصححة مسبقًا بتاريخ 2026-09-23.
+- **نشر ترتيب العزل العشري إلى البيانات الفعلية:** 31 صفًا (`Isolation Required = Yes`) في `Task Scope / Activities` كانت لا تزال تبدأ بـ"Obtain PTW and confirm SIMOPS..." (الترتيب القديم) رغم أن هذا الملف يوثّق الترتيب الصحيح — أُعيدت كتابتها بالترتيب العشري المعتمد أعلاه.
+- **تأكيدات بلا انحراف:** 5 مهام بيرنق بالضبط (T043–T047)، صفر تسرّب Coupling/Mechanical خارج استثناء 88TK/88PF، صياغة "Equipment damage" متسقة بدون تضخيم، منهجية MAINTAIN/REPLACE/INSPECT متسقة، صفر مرجع لـ120VDC.
+- **JSA Form.xlsx:** أُصلح عيب هيكلي حقيقي — عمود Detail (M) لم يكن مدمجًا عبر أي من الـ32 كتلة Job Step (كل الأعمدة المجاورة كانت مدمجة). دُمج + محاذاة يسار + توسيع العمود.
+
+**UNRESOLVED:** لا يوجد. التفاصيل الكاملة في `Conflict_Report_2026-09-25.md`.
